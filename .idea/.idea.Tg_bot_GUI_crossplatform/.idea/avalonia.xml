@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/App.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/Views/ChatView.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/Views/LoginView.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/Views/MainView.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/Views/MainWindow.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+        <entry key="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform/Views/MessageView.axaml" value="Tg_bot_GUI_crossplatform/Tg_bot_GUI_crossplatform.Desktop/Tg_bot_GUI_crossplatform.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

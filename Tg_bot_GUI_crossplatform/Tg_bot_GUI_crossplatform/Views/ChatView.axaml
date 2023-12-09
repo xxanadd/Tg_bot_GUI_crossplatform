@@ -1,0 +1,61 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Tg_bot_GUI_crossplatform.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Tg_bot_GUI_crossplatform.Views.ChatView"
+             x:DataType="vm:ChatViewModel">
+    <Grid ColumnDefinitions="*,*">
+        <DockPanel Grid.Column="0">
+            <Button DockPanel.Dock="Top" Content="Log out" Command="{Binding GoBack}"
+                    Background="Gray" Foreground="White"
+                    Width="100" Height = "40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Margin = "20, 10" CornerRadius="20" FontFamily="{StaticResource Tech}" 
+                    HorizontalAlignment="Left" FontSize="20"/>
+            <!-- Список элементов слева -->
+            <ListBox DockPanel.Dock="Bottom" Margin="20, 0" ItemsSource="{Binding SourceDatabaseController.Source}" 
+                     Background="Transparent" SelectionMode="Toggle">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="LightGray" BorderThickness="2" Background="White" 
+                                Margin="0,0,0,5" CornerRadius="20">
+                            <!-- Внутренний StackPanel для размещения элементов внутри ячейки -->
+                            <DockPanel HorizontalAlignment="Stretch" Margin="5">
+                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding isChecked}" VerticalAlignment="Center"
+                                              HorizontalAlignment="Left" Margin="10"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding ChatName}" HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" Margin="10" 
+                                               FontFamily="{StaticResource Tech}" FontSize="14"/>
+                                    <Button Grid.Column="2" CommandParameter="{Binding}" 
+                                            Command="{Binding $parent[ListBox].((vm:ChatViewModel)DataContext).RemoveSelectedChats}"
+                                            Background="Transparent" Padding="0" HorizontalAlignment="Right"
+                                             Margin="10">
+                                        <Image Source="../Assets/delete_cross.png" Height="20" Width="20"/>
+                                    </Button>
+                                </Grid>
+                            </DockPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+        <StackPanel Grid.Column="1" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <TextBlock Text = "Add chat" HorizontalAlignment="Center" 
+                       FontFamily="{StaticResource Tech}" FontSize="18" Margin = "10"/>
+            <TextBox x:Name="InputChatBox" Text="{Binding Text}" Margin = "10" CornerRadius="20" Height="50" 
+                     HorizontalAlignment="Stretch" FontFamily="{StaticResource Tech}" FontSize="18"
+                     VerticalContentAlignment="Center" Watermark="{Binding Watermark}"/>
+            <Button Content="Add" Command="{Binding AddNewChat }" 
+                    CommandParameter="{Binding}" Background="#000000" Foreground="White"
+                    Width="180" Height = "60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Margin = "10" CornerRadius="20" FontFamily="{StaticResource Tech}" 
+                    HorizontalAlignment="Center" FontSize="20"/>
+            <Button Content="Send message" Command="{Binding GoNext }" Background="#3498db" 
+                    Foreground="White" Width="180" Height = "60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Margin = "10" CornerRadius="20" FontFamily="{StaticResource Tech}" 
+                    HorizontalAlignment="Center" FontSize="20" />
+        </StackPanel>
+    </Grid>
+</UserControl>

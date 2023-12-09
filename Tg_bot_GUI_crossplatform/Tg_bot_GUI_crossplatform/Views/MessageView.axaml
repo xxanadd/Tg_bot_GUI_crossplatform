@@ -1,0 +1,31 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Tg_bot_GUI_crossplatform.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Tg_bot_GUI_crossplatform.Views.MessageView"
+             x:DataType="vm:MessageViewModel">
+    <DockPanel>
+        <!-- Кнопка выхода в меню чатов -->
+        <Button DockPanel.Dock="Top" Command="{Binding GoBack}" Content="Select chats" Background="Gray" Foreground="White"
+                Width="160" Height = "40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                Margin = "20, 10" CornerRadius="20" FontFamily="{StaticResource Tech}" 
+                HorizontalAlignment="Left" FontSize="20"/>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <!-- Надпись -->
+            <TextBlock Text = "Enter message" HorizontalAlignment="Center"
+                       FontFamily="{StaticResource Tech}" FontSize="18"/>
+            <Grid ColumnDefinitions="*,6*,*">
+                <!-- Поле для ввода текста -->
+                <TextBox Grid.Column="1" Text="{Binding Message}" TextWrapping="Wrap" Name="InputTextBox" Margin = "25" CornerRadius="20" Height="150"
+                         HorizontalAlignment="Stretch" FontFamily="{StaticResource Tech}" FontSize="18"
+                         VerticalContentAlignment="Top" Watermark="{Binding Watermark}"/>
+            </Grid>
+            <!-- Кнопка отправки сообщения -->
+            <Button HorizontalAlignment="Center" Content="Send" Background="#3498db" Foreground="White"
+                    Padding="50, 20"  CornerRadius="20" FontFamily="{StaticResource Tech}"
+                    Command="{Binding SendMessage}" FontSize="20"/>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

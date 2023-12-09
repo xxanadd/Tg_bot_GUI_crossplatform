@@ -1,0 +1,22 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Tg_bot_GUI_crossplatform.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Tg_bot_GUI_crossplatform.Views.LoginView"
+             x:DataType="viewModels:LoginViewModel">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+        <TextBlock Text = "Enter your bot token" HorizontalAlignment="Center" 
+                   FontFamily="{StaticResource Tech}" FontSize="18"/>
+        <Grid ColumnDefinitions="*,6*,*">
+            <TextBox Grid.Column="1" Name="InputTextBox" Margin = "25" CornerRadius="20" Height="50" 
+                     HorizontalAlignment="Stretch" FontFamily="{StaticResource Tech}" FontSize="18"
+                     VerticalContentAlignment="Center" Text="{Binding Token}"
+                     Watermark="{Binding Watermark}" />
+        </Grid>
+        <Button HorizontalAlignment="Center" Content="Submit" Background="#3498db" Foreground="White"
+                Padding="50, 20"  CornerRadius="20" FontFamily="{StaticResource Tech}"
+                Command="{Binding GoNext }" FontSize="20"/>
+    </StackPanel>
+</UserControl>

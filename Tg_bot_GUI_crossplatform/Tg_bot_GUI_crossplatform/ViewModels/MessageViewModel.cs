@@ -46,7 +46,6 @@ public class MessageViewModel: ReactiveObject, IRoutableViewModel
             return;
         }
         Watermark = "";
-        Message = "";
         foreach (var chat in _source.Source)
         {
             if (chat.isChecked)
@@ -54,5 +53,6 @@ public class MessageViewModel: ReactiveObject, IRoutableViewModel
                 _bot.SendMessage(chat.ChatId, Message);
             }
         }
+        Message = "";
     }
 }

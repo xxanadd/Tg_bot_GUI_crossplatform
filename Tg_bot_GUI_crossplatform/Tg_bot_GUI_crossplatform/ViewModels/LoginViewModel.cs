@@ -35,8 +35,6 @@ public class LoginViewModel: ReactiveObject, IRoutableViewModel
                 try
                 {
                     var telegramBotController = new TelegramBotController(_token);
-                    Watermark = "Не роутит";
-                    Token = "";
                     return router.Navigate.Execute(new ChatViewModel(HostScreen, router, telegramBotController));
                     
                 }

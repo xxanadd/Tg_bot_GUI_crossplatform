@@ -6,13 +6,10 @@ using Tg_bot_GUI_crossplatform.ViewModels;
 
 namespace Tg_bot_GUI_crossplatform.Views;
 
-public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
+public partial class MainWindow : Window
 {
-    private ContentControl _mainContent;
-    
     public MainWindow()
     {
-        this.WhenActivated(disposables => { });
         InitializeComponent();
     }
 }

@@ -9,6 +9,7 @@ public class AppViewLocator : IViewLocator
 {
     public IViewFor ResolveView<T>(T viewModel, string contract = null) => viewModel switch
     {
+        MainView mainViewModel => new MainView() { DataContext = mainViewModel},
         LoginViewModel loginViewModel => new LoginView() { DataContext = loginViewModel},
         ChatViewModel chatViewModel => new ChatView() { DataContext = chatViewModel },
         MessageViewModel messageViewModel => new MessageView() {DataContext = messageViewModel},

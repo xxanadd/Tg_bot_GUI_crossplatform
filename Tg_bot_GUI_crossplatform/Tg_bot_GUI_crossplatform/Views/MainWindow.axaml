@@ -3,20 +3,11 @@
         xmlns:vm="using:Tg_bot_GUI_crossplatform.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:reactiveUi="http://reactiveui.net"
-        xmlns:tgBotGuiCrossplatform="clr-namespace:Tg_bot_GUI_crossplatform"
+        xmlns:views="clr-namespace:Tg_bot_GUI_crossplatform.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Tg_bot_GUI_crossplatform.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Tg_bot_GUI_crossplatform"
         x:DataType="vm:MainWindowViewModel">
-        <Grid RowDefinitions="*,Auto">
-                <reactiveUi:RoutedViewHost Grid.Row="0" Router="{Binding Router}">
-                        <reactiveUi:RoutedViewHost.DefaultContent/>
-                        <reactiveUi:RoutedViewHost.ViewLocator>
-                                <tgBotGuiCrossplatform:AppViewLocator />
-                        </reactiveUi:RoutedViewHost.ViewLocator>
-                </reactiveUi:RoutedViewHost>
-        </Grid>
-
+        <views:MainView/>
 </Window>

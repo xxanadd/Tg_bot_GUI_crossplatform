@@ -19,6 +19,7 @@
 
     <ItemGroup>
         <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
         <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1"/>
     </ItemGroup>
 

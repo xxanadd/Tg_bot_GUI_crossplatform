@@ -30,7 +30,7 @@ public class ChatViewModel: ReactiveObject, IRoutableViewModel
         get => _watermark;
         set => this.RaiseAndSetIfChanged(ref _watermark, value);
     }
-    public DatabaseController SourceDatabaseController { get; }
+    public NewDatabaseController SourceDatabaseController { get; }
 
     public ChatViewModel(IScreen hostScreen, RoutingState router, TelegramBotController bot)
     {
@@ -41,7 +41,7 @@ public class ChatViewModel: ReactiveObject, IRoutableViewModel
         HostScreen = hostScreen;
         _router = router;
 
-        SourceDatabaseController = new DatabaseController(bot.Id);
+        SourceDatabaseController = new NewDatabaseController(bot.Id);
         
         GoNext = ReactiveCommand.CreateFromObservable(
             () =>

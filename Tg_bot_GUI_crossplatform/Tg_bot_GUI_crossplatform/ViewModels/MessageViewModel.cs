@@ -24,8 +24,8 @@ public class MessageViewModel: ReactiveObject, IRoutableViewModel
     }
     
     public ReactiveCommand<Unit, IRoutableViewModel> GoBack => _router.NavigateBack;
-    private DatabaseController _source;
-    public MessageViewModel(IScreen hostScreen, DatabaseController databaseController, RoutingState router,
+    private NewDatabaseController _source;
+    public MessageViewModel(IScreen hostScreen, NewDatabaseController databaseController, RoutingState router,
         TelegramBotController bot)
     {
         _bot = bot;

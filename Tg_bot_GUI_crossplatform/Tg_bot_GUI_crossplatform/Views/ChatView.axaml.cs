@@ -1,5 +1,9 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
 using ReactiveUI;
@@ -13,6 +17,5 @@ public partial class ChatView : ReactiveUserControl<ChatViewModel>
     {
         this.WhenActivated(disposables => { });
         InitializeComponent();
-        
     }
 }

@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Tg_bot_GUI_crossplatform.Views.ChatView"
              x:DataType="vm:ChatViewModel">
-    <Grid ColumnDefinitions="*,*">
+    <Grid ColumnDefinitions="*, *">
         <DockPanel Grid.Column="0">
             <Button DockPanel.Dock="Top" Content="Log out" Command="{Binding GoBack}"
                     Background="Gray" Foreground="White"
